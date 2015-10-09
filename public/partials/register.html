@@ -4,21 +4,26 @@
       <p>Login or
         <button ng-click='toggleSignUp()'>Sign Up</button>
       </p>
-      <form class="" action="index.html" method="post" ng-show='showForm' ng-submit>
+      <form ng-show='signUpForm' ng-submit='signUp()'>
         <label for="username"><h2>Username</h2></label>
-        <input type="text" id='email' ng-model=''>
+        <input type="text" id='username' ng-model='user.username'>
 
         <label for="email"><h2>Email Address</h2></label>
-        <input type="text" id='username' ng-model=''>
+        <input type="email" id='email' ng-model='user.email'>
 
           <label for="password"><h2>Password</h2></label>
-        <input type="text" id='password' ng-model=''>
+        <input type="password" id='password' ng-model='user.password'>
 
         <label for="confirm"><h2>Confirm Password</h2></label>
-        <input type="text" id='confirm' ng-model=''>
-        
-        <button type="submit">Create Account</button>
+        <input type="password" id='confirm' ng-model='user.confirm'>
+
+        <input type="submit" value='Create Account'>
       </form>
+
+      <div ng-repeat='error in errors'>
+        <p>{{error}}</p>
+      </div>
+
     </div>
   </div>
 

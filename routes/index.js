@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+var db = require('monk')(process.env.LOCAL_DB);
+var users = db.get('users');
 
 //LinkedIn Social Login
 // router.get('/', function(req, res, next) {

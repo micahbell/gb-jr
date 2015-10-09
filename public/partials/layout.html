@@ -2,20 +2,20 @@
   {{1+1}} {{color}}
   <div class="row">
     <div class="medium-1 show-for-medium-up columns">
-      <button ng-click='#'>
-        <img src="public/images/#.png" alt="" />
+      <button ng-click=''>
+        <!-- <img src="public/images/#.png" alt="" /> -->
         <p>Demo</p>
       </button>
-      <button ng-click='#'>
-        <img src="public/images/#.png" alt="" />
+      <button ng-click=''>
+        <!-- <img src="public/images/#.png" alt="" /> -->
         <p>Recipes</p>
       </button>
-      <button ng-click='#'>
-        <img src="public/images/#.png" alt="" />
+      <button ng-click=''>
+        <!-- <img src="public/images/#.png" alt="" /> -->
         <p>Cone</p>
       </button>
-      <button ng-click='#'>
-        <img src="public/images/#.png" alt="" />
+      <button ng-click=''>
+        <!-- <img src="public/images/#.png" alt="" /> -->
         <p>Surface</p>
       </button>
       <button ng-click='new()'>Add New</button>
@@ -51,6 +51,9 @@
 
       <div class="row">
         <div class="medium-12 columns">
+          <!-- if there is recipes show recipes
+          if there are no recipes show add -->
+          <!-- ng-if='' -->
           <div ui-view></div>
         </div>
       </div>

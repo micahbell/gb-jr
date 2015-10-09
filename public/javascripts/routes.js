@@ -7,15 +7,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/register.html'
     })
     .state('layout', {
-      url: '/glazes/layout',
+      url: '/glazes',
       templateUrl: '/partials/layout.html'
     })
     .state('layout.new', {
-      url: '/glazes/new',
+      url: '/new',
       templateUrl: '/partials/new.html'
     })
-    // .state('favorites', {
-    //   url: '/glazes/favorites',
-    //   templateUrl: '/views/favorites.html'
-    // })
 })
