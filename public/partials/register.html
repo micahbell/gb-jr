@@ -1,15 +1,35 @@
 <div class="container" ng-controller='AccountController'>
   <div class="row">
     <div class="medium-4 medium-push-8 columns">
-      <p>Login or Sign Up!</p>
+      <p>Login or
+        <button ng-click='toggleSignUp()'>Sign Up</button>
+      </p>
+      <form class="" action="index.html" method="post" ng-show='showForm' ng-submit>
+        <label for="username"><h2>Username</h2></label>
+        <input type="text" id='email' ng-model=''>
+
+        <label for="email"><h2>Email Address</h2></label>
+        <input type="text" id='username' ng-model=''>
+
+          <label for="password"><h2>Password</h2></label>
+        <input type="text" id='password' ng-model=''>
+
+        <label for="confirm"><h2>Confirm Password</h2></label>
+        <input type="text" id='confirm' ng-model=''>
+        
+        <button type="submit">Create Account</button>
+      </form>
     </div>
   </div>
 
   <div class="row">
-    <div class="medium-12 columns">
+    <div class="medium-8 columns">
       <h1>the glazebook {{1+1}} {{color}}</h1>
       <h2>Join or log in to store, search, and save your ceramic glaze recipes.</h2>
     </div>
+    <div class="medium-4 columns">
+      <button>Sample Glazebook</button>
+    </div>
   </div>
 
   <div class="row">
@@ -17,10 +37,10 @@
       <p>Gif 1</p>
     </div>
     <div class="medium-4 columns">
-      <p>Gif 1</p>
+      <p>Gif 2</p>
     </div>
     <div class="medium-4 columns">
-      <p>Gif 1</p>
+      <p>Gif 3</p>
       <button ng-click='glazes()'>Go to Glazes</button>
     </div>
   </div>
