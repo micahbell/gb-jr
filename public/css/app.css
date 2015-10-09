@@ -2237,4 +2237,7 @@ a:link {
 h1, h2, h3, h4 {
   font-family: "Open Sans Condensed", sans-serif; }
 
+input {
+  max-width: 100%; }
+
 /*# sourceMappingURL=app.css.map */

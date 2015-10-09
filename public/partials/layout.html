@@ -1,0 +1,59 @@
+<div class="container" ng-controller='LayoutController'>
+  {{1+1}} {{color}}
+  <div class="row">
+    <div class="medium-1 show-for-medium-up columns">
+      <button ng-click='#'>
+        <img src="public/images/#.png" alt="" />
+        <p>Demo</p>
+      </button>
+      <button ng-click='#'>
+        <img src="public/images/#.png" alt="" />
+        <p>Recipes</p>
+      </button>
+      <button ng-click='#'>
+        <img src="public/images/#.png" alt="" />
+        <p>Cone</p>
+      </button>
+      <button ng-click='#'>
+        <img src="public/images/#.png" alt="" />
+        <p>Surface</p>
+      </button>
+      <button ng-click='new()'>Add New</button>
+    </div>
+
+    <div class="large-4 medium-3 columns">
+      <button ng-click=''>
+        <p>Recipes</p>
+      </button><br>
+      <button ng-click=''>
+        <p>Favorites</p>
+      </button><br>
+      <button ng-click=''>
+        <p>Recently Added</p>
+      </button>
+    </div>
+
+    <div class="large-7 medium-8 columns">
+      <div class="row">
+        <div class="medium-6 columns">
+          <p>the glazebook</p>
+        </div>
+        <div class="medium-4 columns">
+          <input type="text" placeholder='Search' name='search'>
+          <button type="submit">
+            <i clas='fa fa-search'></i>
+          </button>
+        </div>
+        <div class="medium-2 columns">
+          <button ng-click=''>Logout</button>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="medium-12 columns">
+          <div ui-view></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
