@@ -23,6 +23,10 @@ router.post('/signup', function(req, res, next) {
         email: email
       })
     } else {
+      // req.session.username = username;
+      // req.session.email = email;
+      res.cookie('username', username );
+      res.cookie('email', email );
       users.insert({
         username: username,
         email: email,

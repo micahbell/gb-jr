@@ -14,4 +14,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/new',
       templateUrl: '/partials/new.html'
     })
+    .state('layout.create', {
+      url: '/create'
+    })
 })

@@ -11,6 +11,7 @@ app.controller('AccountController', function($scope, $state, $http) {
 
   $scope.signUp = function() {
     $http.post('auth/signup', $scope.user).then(function(response) {
+      console.log(response);
       if(response.data.signUpErrors) {
         $scope.errors = response.data.signUpErrors;
       } else {
@@ -18,4 +19,18 @@ app.controller('AccountController', function($scope, $state, $http) {
       };
     });
   };
+
+
+
+
 });
+
+
+
+
+
+
+  // A service holds a reference to any object.
+  // A factory is a function which returns any object
+  // A provider is a function which returns any function
+  //

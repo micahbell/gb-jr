@@ -34,9 +34,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.set('trust proxy', 1) // trust first proxy
+app.use(session({ name: 'user', keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2] }))
+
 //LinkedIn Social Login
-// app.use(session({ keys: [process.env.SESSION_KEY1, process.env.SESSION_KEY2] }))
-//
 // app.use(passport.initialize());
 // app.use(passport.session());
 

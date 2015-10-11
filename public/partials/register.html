@@ -6,16 +6,16 @@
       </p>
       <form ng-show='signUpForm' ng-submit='signUp()'>
         <label for="username"><h2>Username</h2></label>
-        <input type="text" id='username' ng-model='user.username'>
+        <input type="text" id='username' required ng-model='user.username'>
 
         <label for="email"><h2>Email Address</h2></label>
-        <input type="email" id='email' ng-model='user.email'>
+        <input type="email" id='email' required ng-model='user.email'>
 
-          <label for="password"><h2>Password</h2></label>
-        <input type="password" id='password' ng-model='user.password'>
+        <label for="password"><h2>Password</h2></label>
+        <input type="password" id='password' required ng-model='user.password'>
 
         <label for="confirm"><h2>Confirm Password</h2></label>
-        <input type="password" id='confirm' ng-model='user.confirm'>
+        <input type="password" id='confirm' required ng-model='user.confirm'>
 
         <input type="submit" value='Create Account'>
       </form>
@@ -23,7 +23,6 @@
       <div ng-repeat='error in errors'>
         <p>{{error}}</p>
       </div>
-
     </div>
   </div>
 

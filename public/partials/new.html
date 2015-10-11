@@ -6,15 +6,15 @@
     </div>
 
     <div class='medium-12 columns'>
-      <form>
+      <form ng-submit='createRecipe()'>
         <div class="row">
           <div class="medium-10 columns">
             <label for="title"><h2>Title</h2></label>
-            <input type="text" id='title'>
+            <input type="text" id='title' ng-model='recipe.title' required>
           </div>
           <div class="medium-2 columns">
             <label for="favorite"><h2>Fav</h2></label>
-            <input type="checkbox" id='favorite'>
+            <input type="checkbox" id='favorite' ng-model='recipe.favorite'>
             <i class='fa fa-heart-o'></i>
             <i class='fa fa-heart'></i>
           </div>
@@ -32,67 +32,67 @@
                 <i class='fa fa-angle-down'></i>
 
                 <div class="medium-12 columns">
-                  <select id='temp-range'>
-                    <option disabled selected>Temperature Range</option>
-                    <option>Low Fire</option>
-                    <option>Mid Range</option>
-                    <option>High Fire</option>
+                  <select id="temp-range" required="required" ng-model="recipe.tempRange">
+                    <option value='' disabled>Temperature Range</option>
+                    <option value='Low Fire'>Low Fire</option>
+                    <option value='Mid Range'>Mid Range</option>
+                    <option value='High Fire'>High Fire</option>
                   </select>
                 </div>
 
                 <div class="medium-12 columns">
-                  <select id='cone'>
-                    <option disabled selected>Cone</option>
-                    <option>∆ 022</option>
-                    <option>∆ 021</option>
-                    <option>∆ 020</option>
-                    <option>∆ 019</option>
-                    <option>∆ 018</option>
-                    <option>∆ 017</option>
-                    <option>∆ 016</option>
-                    <option>∆ 015</option>
-                    <option>∆ 014</option>
-                    <option>∆ 013</option>
-                    <option>∆ 012</option>
-                    <option>∆ 011</option>
-                    <option>∆ 010</option>
-                    <option>∆ 09</option>
-                    <option>∆ 08</option>
-                    <option>∆ 07</option>
-                    <option>∆ 06</option>
-                    <option>∆ 05</option>
-                    <option>∆ 04</option>
-                    <option>∆ 03</option>
-                    <option>∆ 02</option>
-                    <option>∆ 01</option>
-                    <option>∆ 1</option>
-                    <option>∆ 2</option>
-                    <option>∆ 3</option>
-                    <option>∆ 4</option>
-                    <option>∆ 5</option>
-                    <option>∆ 6</option>
-                    <option>∆ 7</option>
-                    <option>∆ 8</option>
-                    <option>∆ 9</option>
-                    <option>∆ 10</option>
-                    <option>∆ 11</option>
-                    <option>∆ 12</option>
-                    <option>∆ 13</option>
-                    <option>∆ 14</option>
-                    <option>∆ 15</option>
+                  <select id="cone" required="required" ng-model="recipe.cone">
+                    <option value=''>Cone</option>
+                    <option value='∆ 022'>∆ 022</option>
+                    <option value='∆ 021'>∆ 021</option>
+                    <option value='∆ 020'>∆ 020</option>
+                    <option value='∆ 019'>∆ 019</option>
+                    <option value='∆ 018'>∆ 018</option>
+                    <option value='∆ 017'>∆ 017</option>
+                    <option value='∆ 016'>∆ 016</option>
+                    <option value='∆ 015'>∆ 015</option>
+                    <option value='∆ 014'>∆ 014</option>
+                    <option value='∆ 013'>∆ 013</option>
+                    <option value='∆ 012'>∆ 012</option>
+                    <option value='∆ 011'>∆ 011</option>
+                    <option value='∆ 010'>∆ 010</option>
+                    <option value='∆ 09'>∆ 09</option>
+                    <option value='∆ 08'>∆ 08</option>
+                    <option value='∆ 07'>∆ 07</option>
+                    <option value='∆ 06'>∆ 06</option>
+                    <option value='∆ 05'>∆ 05</option>
+                    <option value='∆ 04'>∆ 04</option>
+                    <option value='∆ 03'>∆ 03</option>
+                    <option value='∆ 02'>∆ 02</option>
+                    <option value='∆ 01'>∆ 01</option>
+                    <option value='∆ 1'>∆ 1</option>
+                    <option value='∆ 2'>∆ 2</option>
+                    <option value='∆ 3'>∆ 3</option>
+                    <option value='∆ 4'>∆ 4</option>
+                    <option value='∆ 5'>∆ 5</option>
+                    <option value='∆ 6'>∆ 6</option>
+                    <option value='∆ 7'>∆ 7</option>
+                    <option value='∆ 8'>∆ 8</option>
+                    <option value='∆ 9'>∆ 9</option>
+                    <option value='∆ 10'>∆ 10</option>
+                    <option value='∆ 11'>∆ 11</option>
+                    <option value='∆ 12'>∆ 12</option>
+                    <option value='∆ 13'>∆ 13</option>
+                    <option value='∆ 14'>∆ 14</option>
+                    <option value='∆ 15'>∆ 15</option>
                   </select>
                 </div>
 
                 <div class="medium-12 columns">
-                  <select id='firing-type'>
-                    <option disabled selected>Type of Firing</option>
-                    <option>Oxidation</option>
-                    <option>Reduction</option>
-                    <option>Raku</option>
-                    <option>Salt or Soda</option>
-                    <option>Wood</option>
-                    <option>Lustre</option>
-                    <option>Saggar</option>
+                  <select id="firing-type" required="required" ng-model="recipe.firingType">
+                    <option value='' disabled>Type of Firing</option>
+                    <option value='Oxidation'>Oxidation</option>
+                    <option value='Reduction'>Reduction</option>
+                    <option value='Raku'>Raku</option>
+                    <option value='Salt or Soda'>Salt or Soda</option>
+                    <option value='Wood'>Wood</option>
+                    <option value='Lustre'>Lustre</option>
+                    <option value='Saggar'>Saggar</option>
                   </select>
                 </div>
               </div>
@@ -108,40 +108,40 @@
                 <i class='fa fa-angle-down'></i>
 
                 <div class="medium-12 columns">
-                  <select id='surface'>
-                    <option disabled selected>Surface</option>
-                    <option>Shiny or Glossy</option>
-                    <option>Semi-Gloss</option>
-                    <option>Semi-Matte or Satin</option>
-                    <option>Matte</option>
-                    <option>Dry Matte</option>
+                  <select id="surface" required="required" ng-model="recipe.surface">
+                    <option value='' disabled>Surface</option>
+                    <option value='Shiny or Glossy'>Shiny or Glossy</option>
+                    <option value='Semi-Gloss'>Semi-Gloss</option>
+                    <option value='Semi-Matte or Satin'>Semi-Matte or Satin</option>
+                    <option value='Matte'>Matte</option>
+                    <option value='Dry Matte'>Dry Matte</option>
                   </select>
                 </div>
 
                 <div class="medium-12 columns">
-                  <select id='opacity'>
-                    <option disabled selected>Opacity</option>
-                    <option>Transparent</option>
-                    <option>Translucent</option>
-                    <option>Opaque</option>
+                  <select id="opacity" required="required" ng-model="recipe.opacity">
+                    <option value='' disabled>Opacity</option>
+                    <option value='Transparent'>Transparent</option>
+                    <option value='Translucent'>Translucent</option>
+                    <option value='Opaque'>Opaque</option>
                   </select>
                 </div>
 
                 <div class="medium-12 columns">
-                  <select id='color'>
-                    <option disabled selected>Color</option>
-                    <option>No Color</option>
-                    <option>White</option>
-                    <option>Gray</option>
-                    <option>Black</option>
-                    <option>Brown</option>
-                    <option>Red</option>
-                    <option>Orange</option>
-                    <option>Yellow</option>
-                    <option>Green</option>
-                    <option>Blue-Green</option>
-                    <option>Blue</option>
-                    <option>Purple</option>
+                  <select id="color" required="required" ng-model="recipe.color">
+                    <option value='' disabled>Color</option>
+                    <option value='No Color'>No Color</option>
+                    <option value='White'>White</option>
+                    <option value='Gray'>Gray</option>
+                    <option value='Black'>Black</option>
+                    <option value='Brown'>Brown</option>
+                    <option value='Red'>Red</option>
+                    <option value='Orange'>Orange</option>
+                    <option value='Yellow'>Yellow</option>
+                    <option value='Green'>Green</option>
+                    <option value='Blue-Green'>Blue-Green</option>
+                    <option value='Blue'>Blue</option>
+                    <option value='Purple'>Purple</option>
                   </select>
                 </div>
               </div>
@@ -161,82 +161,82 @@
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_1')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_1')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients'ng-model='recipe.ingredient_2')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_2')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_3')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_3')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_4')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_4')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_5')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_5')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_6')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_6')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_7')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_7')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_8')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_8')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_9')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_9')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredient_10')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount')>
+                <input type='text' id='amount' ng-model='recipe.amount_10')>
               </div>
             </div>
           </div>
@@ -244,7 +244,7 @@
 
           <div class="medium-4 columns">
             <label for="notes"><h3>Notes</h3></label>
-            <textarea rows="6" id='notes'></textarea>
+            <textarea id='notes' ng-model='recipe.notes'></textarea>
           </div>
         </div>
 
@@ -261,50 +261,50 @@
 
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_1'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_1'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_2'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_2'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_3'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_3'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_4'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_4'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_5'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_5'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients'>
+                <input type='text' id='add-ingredients' ng-model='recipe.add_in_6'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts'>
+                <input type='text' id='add-amounts' ng-model='recipe.add_amount_6'>
               </div>
             </div>
           </div>
@@ -315,26 +315,25 @@
             <i class='fa fa-angle-drop'></i>
             <div class="row">
               <div class="medium-12 columns">
-                <select id='specialty'>
-                  <option disabled selected>Specialty Glaze</option>
-                  <option>Crystalline</option>
-                  <option>Metallic</option>
-                  <option>Luster</option>
-                  <option>Texture</option>
-                  <option>Rivulet</option>
-                  <option>Slip</option>
-                  <option>Stain</option>
-                  <option>Engobe</option>
+                <select name="specialty" id="specialty" ng-model="recipe.specialty">
+                  <option value='' disabled>Specialty Glaze</option>
+                  <option value='Crystalline'>Crystalline</option>
+                  <option value='Metallic'>Metallic</option>
+                  <option value='Luster'>Luster</option>
+                  <option value='Texture'>Texture</option>
+                  <option value='Rivulet'>Rivulet</option>
+                  <option value='Slip'>Slip</option>
+                  <option value='Stain'>Stain</option>
+                  <option value='Engobe'>Engobe</option>
                 </select>
               </div>
             </div>
             <div class="row">
               <div class="medium-12 columns">
-                <select id='test-status'>
-                  <option disabled selected>Test Status</option>
-                  <option>Tested</option>
-                  <option>Untested</option>
-                  <option>In Progress</option>
+                <select name="test_status" id="test-status" ng-model="recipe.testStatus">
+                  <option value='' disabled>Test Status</option>
+                  <option value='Tested'>Tested</option>
+                  <option value='Untested'>Untested</option>
                 </select>
               </div>
             </div>
@@ -342,7 +341,7 @@
             <div class="row">
               <div class="medium-12 columns">
                 <label for="image"><h4>Upload Image</h4></label>
-                <input type='file' id='image'>
+                <input type='file' id='image' ng-model='recipe.image'>
               </div>
             </div>
 
@@ -351,7 +350,7 @@
 
         <div class="row">
           <div class="medium-12 columns">
-            <button><h4>Add New Recipe</h4></button>
+            <button type='submit'><h4>Add New Recipe</h4></button>
           </div>
         </div>
       </form>
