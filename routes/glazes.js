@@ -3,18 +3,6 @@ var express = require('express'),
     db = require('monk')(process.env.LOCAL_DB),
     users = db.get('users');
 
-router.get('/', function(req, res, next) {
-  users.findOne({ email: req.cookies.email }).then(function(recipes) {
-
-  })
-  //show the recipes
-  res.render('index');
-});
-
-router.get('/new', function(req, res, next) {
-  res.render('index');
-});
-
 router.post('/create', function(req, res, next) {
   var date = Date(),
       recipeId = users.id();
@@ -26,7 +14,25 @@ router.post('/create', function(req, res, next) {
         recipe: req.body
       }
     }
-  }).then(function(response) { res.json(response.data) })
+  }).then(function(response) {
+    // res.cookie('username', req.cookies.username );
+    // res.cookie('email', req.cookies.email );
+    res.json(response.data) })
 });
+
+router.get('/recipes', function(req, res, next) {
+  users.findOne({ email: req.cookies.email }).then(function(user) {
+    console.log(user.glazes);
+    res.json(user.glazes);
+  })
+});
+
+
+
+
+
+
+
+
 
 module.exports = router;

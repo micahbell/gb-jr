@@ -11,3 +11,42 @@
 @function em($target, $context: $base__font-size) {
   @return ($target / $context) * 1em;
 }
+
+@mixin vendor-prefix($property, $argument) {
+  -webkit-#{$property}: #{$argument};
+  -ms-#{$property}: #{$argument};
+  -moz-#{$property}: #{$argument};
+  -o-#{$property}: #{$argument};
+  #{$property}: #{$argument};
+}
+
+@mixin background-styles() {
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@mixin header-styles() {
+  font-family: $font-family--headers;
+  margin: 1.414rem 0 0.5rem;
+  font-weight: $font-weight--light;
+  line-height: 1.2;
+}
+
+@mixin border-radius-styles() {
+  outline: none;
+  border: none;
+  border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+//

@@ -1,15 +1,14 @@
 <div class="container" ng-controller='LayoutController'>
-  {{1+1}} {{color}}
   <div class="row">
-    <div class="medium-1 show-for-medium-up columns">
+    <div class="medium-1 show-for-medium-up columns main-section primary-nav">
       <button ng-click=''>
         <img src="public/images/image.png" alt="" />
         <p>Demo</p>
       </button>
-      <button ng-click=''>
+      <a ui-sref='layout.recipes'><button ng-click=''>
         <img src="public/images/image.png" alt="" />
         <p>Recipes</p>
-      </button>
+      </button></a>
       <button ng-click=''>
         <img src="public/images/image.png" alt="" />
         <p>Cone</p>
@@ -18,13 +17,12 @@
         <img src="public/images/image.png" alt="" />
         <p>Surface</p>
       </button>
-      <button ng-click='new()'>Add New</button>
     </div>
 
-    <div class="large-4 medium-3 columns">
-      <button ng-click=''>
+    <div class="large-4 medium-3 columns main-section secondary-nav">
+      <a ui-sref='layout.recipes'><button ng-click=''>
         <p>Recipes</p>
-      </button><br>
+      </button></a><br>
       <button ng-click=''>
         <p>Favorites</p>
       </button><br>
@@ -33,7 +31,7 @@
       </button>
     </div>
 
-    <div class="large-7 medium-8 columns">
+    <div class="large-7 medium-8 columns main-section content">
       <div class="row">
         <div class="medium-6 columns">
           <p>the glazebook</p>
@@ -45,7 +43,7 @@
           </button>
         </div>
         <div class="medium-2 columns">
-          <button ng-click=''>Logout</button>
+          <button ng-click='logout()'>Logout</button>
         </div>
       </div>
 

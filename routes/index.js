@@ -11,7 +11,7 @@ var users = db.get('users');
 //     .header('x-li-format', 'json')
 //     .end(function (response) {
 //       console.log(response.body.emailAddress);
-//       res.render('glazes', { profile: response.body });
+//       res.render('glaze', { profile: response.body });
 //     })
 //   } else {
 //     res.render('index');

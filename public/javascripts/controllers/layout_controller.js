@@ -1,7 +1,9 @@
-app.controller('LayoutController', function($scope, $state) {
+app.controller('LayoutController', function($scope, $state, $http) {
   $scope.color='Red';
 
-  $scope.new = function() {
-    $state.go('layout.new');
-  }
-})
+  // $scope.logout = function() {
+  //   $http.post('auth/logout').then(function(response) {
+  //     $state.go('register')
+  //   })
+  // }
+});

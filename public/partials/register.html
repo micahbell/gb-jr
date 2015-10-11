@@ -4,7 +4,7 @@
       <p>Login or
         <button ng-click='toggleSignUp()'>Sign Up</button>
       </p>
-      <form ng-show='signUpForm' ng-submit='signUp()'>
+      <form ng-hide='signUpForm' ng-submit='signUp()'>
         <label for="username"><h2>Username</h2></label>
         <input type="text" id='username' required ng-model='user.username'>
 
@@ -18,6 +18,7 @@
         <input type="password" id='confirm' required ng-model='user.confirm'>
 
         <input type="submit" value='Create Account'>
+        <!-- <p ng-show='signUp.$invalid'>Please fill in all fields.</p> -->
       </form>
 
       <div ng-repeat='error in errors'>
@@ -45,7 +46,7 @@
     </div>
     <div class="medium-4 columns">
       <p>Gif 3</p>
-      <button ng-click='glazes()'>Go to Glazes</button>
+      <button ng-click='glaze()'>Go to Glazes</button>
     </div>
   </div>
 </div>

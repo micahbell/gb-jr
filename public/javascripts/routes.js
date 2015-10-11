@@ -7,14 +7,19 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/register.html'
     })
     .state('layout', {
-      url: '/glazes',
+      url: '/glaze',
       templateUrl: '/partials/layout.html'
     })
     .state('layout.new', {
       url: '/new',
       templateUrl: '/partials/new.html'
     })
-    .state('layout.create', {
-      url: '/create'
+    .state('layout.recipes', {
+      url: '/recipes',
+      templateUrl: '/partials/recipes.html'
     })
+    // .state('layout.show', {
+    //   url: '/:id',
+    //   templateUrl: '/partials/show.html'
+    // })
 })

@@ -37,9 +37,12 @@ router.post('/signup', function(req, res, next) {
   });
 });
 
-
-
-
+// USER LOGOUT
+router.get('/logout', function(req, res, next) {
+  res.clearCookie('username');
+  res.clearCookie('email');
+  res.json(response);
+});
 
 
 

@@ -1,7 +1,7 @@
 // app.factory('AccountService', function ($http) {
 //   return {
 //     all: function() {
-//       return $http.get('/glazes').then(function(response) {
+//       return $http.get('/glaze').then(function(response) {
 //         console.log('+++++++++++++++++++++++++++');
 //         return response.data;
 //       });

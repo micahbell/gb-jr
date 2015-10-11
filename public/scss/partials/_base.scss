@@ -1,6 +1,7 @@
-// Global Styles
+///// Global Styles /////
 .columns {
 	border: 1px solid;
+	background-color: $snow;
 }
 
 * {
@@ -10,20 +11,92 @@
 }
 
 body {
+	@include background-styles;
+	background: url('../images/bg-10.jpg');
   font-size: $base__font-size;
   line-height: ($base__line-height/$base__font-size);
   font-family: $font-family--primary;
 }
 
-a:visited,
-a:link {
-  text-decoration: none;
+.container { padding-top: em(20px); }
+
+.main-section {
+	height: 602px;
+	overflow: scroll;
 }
 
-h1, h2, h3, h4 {
-  font-family: $font-family--headers;
+h1 {
+	@include header-styles;
+	font-size: (3.157 * $base__font-size);
+	margin-top: 0;
 }
 
-input {
-	max-width: 100%;
+h2 {
+	@include header-styles;
+	font-size: (2.369 * $base__font-size);
+}
+
+h3 {
+	@include header-styles;
+	font-size: (1.777 * $base__font-size);
+}
+
+h4 {
+	@include header-styles;
+	font-size: (1.333 * $base__font-size);
+}
+
+a {
+	&:visited, &:link {
+		text-decoration: none;
+	}
+}
+
+button { @include border-radius-styles; }
+
+select {
+	@include border-radius-styles;
+	@include vendor-prefix(appearance, none);
+	font-family: $font-family--primary;
+	background-color: $snow;
+	margin-bottom: em(12px);
+  padding: em(6px) em(12px);
+	box-shadow: 2px 2px 3px $alto;
+	&:focus {
+		box-shadow: 0 0 3px $carnation;
+	}
+}
+
+textarea {
+	@include border-radius-styles;
+	width: 100%;
+	&:focus {
+		box-shadow: 0 0 3px $carnation;
+	}
+}
+
+input[type='text'],
+input[type='email'],
+input[type='password'] {
+	width: 100%;
+	background: transparent;
+	border: none;
+	outline: none;
+	border-bottom: 1px solid $emperor;
+	transition: border 0.5s;
+	&:focus {
+		border-bottom: 1px solid $carnation;
+	}
+}
+
+::-webkit-input-placeholder { color: $silver; }
+:-moz-placeholder 					{ color: $silver; }
+::-moz-placeholder 					{ color: $silver; }
+:-ms-input-placeholder 			{ color: $silver; }
+
+.hidden { display: none; }
+
+footer {
+  background-image: url('../images/bg-10-dark-blur.jpg');
+  height: 42px;
 }

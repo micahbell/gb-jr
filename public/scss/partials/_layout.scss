@@ -1,0 +1,15 @@
+///// Layout Styles /////
+.primary-nav {
+	@include background-styles;
+	background-image: url('../images/bg-10-dark-blur.jpg');
+}
+
+.secondary-nav {
+	@include background-styles;
+	background-image: url('../images/bg-10-blur.jpg');
+}
+
+.content {
+	@include background-styles;
+	background-image: url('../images/bg-10-light-blur.jpg');
+}
