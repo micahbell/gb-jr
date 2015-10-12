@@ -19,12 +19,13 @@ router.post('/create', function(req, res, next) {
     // res.cookie('email', req.cookies.email );
     res.json(response.data) })
 });
-
-router.get('/recipes', function(req, res, next) {
-  users.findOne({ email: req.cookies.email }).then(function(user) {
-    console.log(user.glazes);
-    res.json(user.glazes);
-  })
+// /glaze/:user_id/recipes
+router.get('/:user_id/recipes', function(req, res, next) {
+  // users.findOne({ email: req.cookies.email }).then(function(user) {
+  //   console.log(user.glazes);
+  //   res.json(user.glazes);
+  // })
+  res.json('hello')
 });
 
 

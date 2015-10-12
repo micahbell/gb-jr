@@ -1,4 +1,4 @@
-app.controller('AccountController', ['$scope', '$state', '$http', function($scope, $state, $http) {
+app.controller('AccountController', function($scope, $http, $state, AccountsService) {
   $scope.color='Blue';
 
   $scope.signUpForm = true;
@@ -7,19 +7,21 @@ app.controller('AccountController', ['$scope', '$state', '$http', function($scop
   }
 
   $scope.signUp = function() {
-    $http.post('auth/signup', $scope.user).then(function(response) {
+    AccountsService.signUp($scope.user).then(function(response) {
+      console.log(response);
       if(response.data.signUpErrors) {
         $scope.errors = response.data.signUpErrors;
       } else {
         $state.go('layout.recipes')
-      };
-    });
+      }
+    })
   };
 
 
 
 
-}]);
+});
+
 
 
 

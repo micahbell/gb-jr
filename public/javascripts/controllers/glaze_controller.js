@@ -1,22 +1,10 @@
-app.controller('GlazeController', function($scope, $http, $state) {
-  $scope.glazes;
+app.controller('GlazeController', function($scope, $http, $state, RecipesService) {
+
   $scope.createRecipe = function() {
-    $http.post('glaze/create', $scope.recipe).then(function(response) {
-      $http.get('glaze/recipes').then(function(glazes) {
-        $scope.glazes = glazes.data;
-        console.log('scope.glazes', $scope.glazes);
-        $state.go('layout.recipes');
-      })
-    });
+    RecipesService.create($scope.recipe).then(function(response) {
+      console.log(response);
+    })
   }
-
-  // $scope.createRecipe = function() {
-  //   $http.post('glaze/create', $scope.recipe).then(function(response) {
-  //     $state.go('layout.recipes');
-  //   })
-  // };
-
-
 
 
 
@@ -26,3 +14,7 @@ app.controller('GlazeController', function($scope, $http, $state) {
 
 
 });
+
+// finish writing create service function
+// in your express route hit the database and return all user recipes
+// send those recipes as json from that route

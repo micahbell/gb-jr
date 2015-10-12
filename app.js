@@ -73,7 +73,7 @@ app.use(session({ name: 'user', keys: [process.env.SESSION_KEY1, process.env.SES
 
 app.use('/', routes);
 app.use('/auth', auth);
-app.use('/glaze', glazes);
+app.use('/glazes', glazes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

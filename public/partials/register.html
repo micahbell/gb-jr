@@ -6,7 +6,7 @@
       </p>
       <form ng-hide='signUpForm' ng-submit='signUp()'>
         <label for="username"><h2>Username</h2></label>
-        <input type="text" id='username' required ng-model='user.username'>
+        <input type="text" autocomplete="off" id='username' required ng-model='user.username'>
 
         <label for="email"><h2>Email Address</h2></label>
         <input type="email" id='email' required ng-model='user.email'>

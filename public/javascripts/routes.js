@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/register.html'
     })
     .state('layout', {
-      url: '/glaze',
+      url: '',
       templateUrl: '/partials/layout.html'
     })
     .state('layout.new', {
