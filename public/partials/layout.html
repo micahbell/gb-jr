@@ -1,49 +1,52 @@
 <div class="container" ng-controller='LayoutController'>
   <div class="row">
-    <div class="medium-1 show-for-medium-up columns main-section primary-nav">
-      <button ng-click=''>
-        <img src="public/images/image.png" alt="" />
-        <p>Demo</p>
-      </button>
-      <a ui-sref='layout.recipes'><button ng-click=''>
-        <img src="public/images/image.png" alt="" />
-        <p>Recipes</p>
-      </button></a>
-      <button ng-click=''>
-        <img src="public/images/image.png" alt="" />
-        <p>Cone</p>
-      </button>
-      <button ng-click=''>
-        <img src="public/images/image.png" alt="" />
-        <p>Surface</p>
-      </button>
-    </div>
+      <div class="medium-1 show-for-medium-up columns main-section no-padding primary-nav">
+        <button ng-click=''>
+          <img src="/images/user.png" alt="" />
+          <p class='small'>Demo</p>
+        </button>
+        <a ui-sref='layout.recipes'><button ng-click=''>
+          <img src="/images/recipes.png" alt="" />
+          <p class='small'>Recipes</p>
+        </button></a>
+        <button ng-click=''>
+          <img src="/images/cone.png" alt="" />
+          <p class='small'>Cone</p>
+        </button>
+        <button ng-click=''>
+          <img src="/images/surface.png" alt="" />
+          <p class='small'>Surface</p>
+        </button>
+      </div>
 
-    <div class="large-4 medium-3 columns main-section secondary-nav">
-      <a ui-sref='layout.recipes'><button ng-click=''>
-        <p>Recipes</p>
-      </button></a><br>
-      <button ng-click=''>
-        <p>Favorites</p>
-      </button><br>
-      <button ng-click=''>
-        <p>Recently Added</p>
+    <div class="large-4 medium-3 columns main-section no-padding secondary-nav">
+      <a ui-sref='layout.recipes'>
+        <button id='top' ng-click=''>
+          <h3>Recipes</h3>
+        </button>
+      </a>
+      <button id='middle' ng-click=''>
+        <h3>Favorites</h3>
       </button>
+      <button id='bottom' ng-click=''>
+        <h3>Recently Added</h3>
+      </button>
+      <hr>
     </div>
 
     <div class="large-7 medium-8 columns main-section content">
-      <div class="row">
+      <div class="row header">
         <div class="medium-6 columns">
-          <p>the glazebook</p>
+          <p class='title'>the glazebook</p>
         </div>
-        <div class="medium-4 columns">
+        <div class="medium-4 columns search-bar">
           <input type="text" placeholder='Search' name='search'>
           <button type="submit">
-            <i clas='fa fa-search'></i>
+            <i class='fa fa-search'></i>
           </button>
         </div>
         <div class="medium-2 columns">
-          <button ng-click='logout()'>Logout</button>
+          <button ng-click='logout()' class='logout'>Logout</button>
         </div>
       </div>
 

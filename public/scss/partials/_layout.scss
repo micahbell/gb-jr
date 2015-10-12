@@ -2,14 +2,85 @@
 .primary-nav {
 	@include background-styles;
 	background-image: url('../images/bg-10-dark-blur.jpg');
+	border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
+	button {
+		width: 100%;
+		position: relative;
+		top: 110px;
+		padding: 0px;
+	  background-color: $nav-button-bg;
+		&:hover, &:focus { background-color: rgba(0, 0, 0, 0.275); }
+		img {
+			max-width: 45px;
+			position: relative;
+			top: 14px;
+		}
+		p { color: $nav-text; }
+	}
 }
 
 .secondary-nav {
 	@include background-styles;
 	background-image: url('../images/bg-10-blur.jpg');
+	button {
+		width: 100%;
+		text-align: left;
+		background-color: $nav-button-bg;
+		border-radius: 0px;
+		h3 { margin: em(4px) em(8px); }
+		&:hover, &:focus {
+			background-color: $carnation;
+			h3 { color: $nav-text; }
+		}
+		&#top 	 { margin-top: em(14px); }
+		&#bottom { margin-bottom: em(14px); }
+	}
 }
 
 .content {
 	@include background-styles;
 	background-image: url('../images/bg-10-light-blur.jpg');
+	border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
+	.header { margin-top: em(14px); }
+	.title 	{
+		font-size: 1.777em;
+	  font-weight: $font-weight--light;
+		margin: em(0px);
+		color: $silver;
+	}
+	.search-bar {
+		border-radius: $border-radius;
+		border: 1px solid $silver;
+		padding: em(3.5px) em(7px);
+		input {
+			width: 83%;
+			border-bottom: none;
+		}
+		button {
+			background-color: $nav-button-bg;
+			position: relative;
+			right: -10px;
+			top: -1.5px;
+			padding: 0px 5px;
+			i { color: $silver; }
+		}
+	}
+	.logout {
+		padding: em(4.5px) em(14px);
+		background-color: $jungle-mist;
+		box-shadow: 2px 2px 3px $french-gray;
+		&:active { box-shadow: 0px 0px 1px $french-gray; }
+	}
+	h1 { margin-top: em(14px); }
 }
+
+
+
+
+
+
+
+
+//
