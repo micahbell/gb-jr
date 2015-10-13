@@ -1,4 +1,4 @@
-app.controller('AccountController', function($scope, $http, $state, AccountsService) {
+app.controller('AccountController', function($scope, $state, $location, AccountsService) {
   $scope.color='Blue';
 
   $scope.signUpForm = true;
@@ -12,10 +12,13 @@ app.controller('AccountController', function($scope, $http, $state, AccountsServ
       if(response.data.signUpErrors) {
         $scope.errors = response.data.signUpErrors;
       } else {
-        $state.go('layout.recipes')
+        $scope.userId = response.data._id;
+        $location.path('/' + $scope.userId + '/recipes');
+        $state.go('layout.recipes');
       }
     })
   };
+
 
 
 

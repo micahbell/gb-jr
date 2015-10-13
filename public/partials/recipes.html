@@ -8,25 +8,24 @@
     </div>
   </div>
 
-  <div ng-repeat='glaze in glazes.recipe'>
+  <button ng-click='getGlazes()'>Get Glazes</button>
+
+  <div ng-repeat='val in recipes'>
     <div class="row">
-      <!-- <div class="medium-2 columns">
+      <div class="medium-2 columns">
         <a href="#"><img src="#" alt="" /></a>
       </div>
       <div class="medium-9 columns">
-        <a ng-click='showRecipe()'><h3>Title</h3></a>
-        <p>Temp Range  |  Cone  |  Surface</p>
+        <a ng-click='showRecipe()'><h3>{{val.recipe.title}}</h3></a>
+        <p>{{val.recipe.tempRange}}&emsp;|&emsp;{{val.recipe.cone}}&emsp;|&emsp;{{val.recipe.surface}}</p>
       </div>
       <div class="medium-1 columns">
         <i class='fa fa-heart'></i>
-      </div> -->
-      <p>
-        hi
-      </p>
+      </div>
     </div>
   </div>
 
   <div class="row footer">
-    <footer>hi</footer>
+    <footer>Footer</footer>
   </div>
 </div>

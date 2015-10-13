@@ -15,7 +15,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/new.html'
     })
     .state('layout.recipes', {
-      url: '/recipes',
+      url: '/:user_id/recipes',
       templateUrl: '/partials/recipes.html'
     })
     // .state('layout.show', {
