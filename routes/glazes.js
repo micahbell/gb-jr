@@ -28,6 +28,13 @@ router.get('/:user_id/recipes', function(req, res, next) {
   })
 });
 
+router.get('/:user_id/recipes/:recipe_id', function(req, res, next) {
+  console.log('USER OIDDJDJ', req.params.user_id);
+  users.findOne({ _id: req.params.user_id }).then(function(user) {
+    res.json(user.glazes);
+  })
+});
+
 
 
 

@@ -8,14 +8,14 @@
     </div>
   </div>
 
-  <div ng-repeat='val in recipes'>
+  <div ng-repeat='val in recipes | orderBy: sort | filter: search'>
     <div class="row">
       <div class="medium-2 columns">
         <a href="#"><img src="#" alt="" /></a>
       </div>
       <div class="medium-9 columns">
-        <a ng-click='showRecipe()'><h3>{{val.recipe.title}}</h3></a>
-        <p>{{val.recipe.tempRange}}&emsp;|&emsp;{{val.recipe.cone}}&emsp;|&emsp;{{val.recipe.surface}}</p>
+        <a ng-click='showRecipe(val._id)'><h3>{{val.recipe.title}}</h3></a>
+        <p>{{val.date | amDateFormat: 'MMMM Do, YYYY'   }}&emsp; | &emsp;{{val.recipe.cone}}&emsp; | &emsp;{{val.recipe.surface}}</p>
       </div>
       <div class="medium-1 columns">
         <i class='fa fa-heart'></i>

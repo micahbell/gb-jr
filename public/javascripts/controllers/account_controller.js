@@ -18,8 +18,6 @@ app.controller('AccountController', function($scope, $location, AccountsService)
 
   $scope.userLogin = function() {
     AccountsService.login($scope.login).then(function(response) {
-      console.log('RESPONSE!!!!!', response);
-      console.log('response.data.id', response.data.id);
       if(response.data.loginError) {
         $scope.loginErrors = response.data.loginError;
       } else if(response.data.glazes === 0){
@@ -41,5 +39,4 @@ app.controller('AccountController', function($scope, $location, AccountsService)
 
 
 
-  // A service holds a reference to any object.
-  // A factory is a function which returns any object.
+//

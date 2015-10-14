@@ -1,4 +1,4 @@
-var app = angular.module('glazebook', ['ui.router']);
+var app = angular.module('glazebook', ['ui.router', 'angularMoment']);
 
 app.config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
