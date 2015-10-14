@@ -72,6 +72,15 @@ app.use(session({ name: 'user', keys: [process.env.SESSION_KEY1, process.env.SES
 // });
 
 app.use('/', routes);
+
+// app.use(function(req, res, next) {
+//   if(req.cookies.username) {
+//     next()
+//   } else {
+//     res.redirect('/');
+//   };
+// });
+
 app.use('/auth', auth);
 app.use('/glazes', glazes);
 

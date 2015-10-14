@@ -24,9 +24,7 @@ router.post('/signup', function(req, res, next) {
       })
     } else {
       // req.session.username = username;
-      // req.session.email = email;
       res.cookie('username', username );
-      res.cookie('email', email );
       users.insert({
         username: username,
         email: email,
@@ -37,12 +35,47 @@ router.post('/signup', function(req, res, next) {
   });
 });
 
+// USER LOGIN
+router.post('/login', function(req, res, next) {
+  var email = req.body.email.toLowerCase().trim();
+      password = req.body.password.trim();
+
+  users.findOne({ email: email }).then(function(user) {
+    if(!user) {
+      res.json({
+        loginError: 'No account associated with this email, please create an account.',
+        email: email
+      })} else if(user) {
+        var compare = bcrypt.compareSync(password, user.password);
+        if(compare) {
+          res.cookie('username', user.username );
+          res.json({
+            id: user._id,
+            username: user.username,
+            glazes: user.glazes.length
+          })
+      } else {
+        res.json({
+          loginError: 'Invalid password.',
+          email: email
+        })
+      }
+    }
+  })
+});
+
+
 // USER LOGOUT
 router.get('/logout', function(req, res, next) {
   res.clearCookie('username');
-  res.clearCookie('email');
-  res.json(response);
+  res.json('User logged out.');
 });
+
+
+
+
+
+
 
 
 

@@ -3,10 +3,11 @@ var express = require('express'),
     db = require('monk')(process.env.LOCAL_DB),
     users = db.get('users');
 
-router.post('/create', function(req, res, next) {
+router.post('/:user_id/create', function(req, res, next) {
   var date = Date(),
       recipeId = users.id();
-  users.update({ email: req.cookies.email },
+
+  users.update({ _id: req.params.user_id },
     { $push:
       { glazes: {
         _id: recipeId,
@@ -15,14 +16,14 @@ router.post('/create', function(req, res, next) {
       }
     }
   }).then(function(response) {
-    // res.cookie('username', req.cookies.username );
+    res.cookie('username', req.cookies.username );
     res.json(response.data) })
 });
 
 
 router.get('/:user_id/recipes', function(req, res, next) {
+  console.log('USER OIDDJDJ', req.params.user_id);
   users.findOne({ _id: req.params.user_id }).then(function(user) {
-    console.log('USER GLAZES', user.glazes);
     res.json(user.glazes);
   })
 });

@@ -7,7 +7,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/register.html'
     })
     .state('layout', {
-      url: '',
+      url: '/:user_id',
       templateUrl: '/partials/layout.html'
     })
     .state('layout.new', {
@@ -15,11 +15,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
       templateUrl: '/partials/new.html'
     })
     .state('layout.recipes', {
-      url: '/:user_id/recipes',
+      url: '/recipes',
       templateUrl: '/partials/recipes.html'
     })
     // .state('layout.show', {
     //   url: '/:id',
     //   templateUrl: '/partials/show.html'
     // })
+    // $locationProvider.html5Mode(true);
 })
