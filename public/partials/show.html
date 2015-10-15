@@ -28,9 +28,11 @@
         </a>
       </div>
       <div class="medium-6 columns">
-        <button ng-click='destroyRecipe({ recipe_id: recipe._id })'>
-          <i class='fa fa-trash-o'></i>
-        </button>
+        <a ui-sref='layout.destroy({ recipe_id: val._id })'>
+          <button>
+            <i class='fa fa-trash-o'></i>
+          </button>
+        </a>
       </div>
     </div>
   </div>

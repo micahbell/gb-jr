@@ -10,10 +10,15 @@
 
   <div ng-repeat='val in recipes | orderBy: sort | filter: search'>
     <div class="row">
-      <div class="medium-2 columns">
-        <a href="#">
-          <img src="#" alt="" />
-        </a>
+      <div ng-show='!val.recipe.image'>
+        <div class="medium-2 columns">
+          <a href='/recipes/{{val._id}}'>
+            <img src='/images/colors/{{val.recipe.color}}.png' alt="" />
+          </a>
+        </div>
+        <div ng-show='val.recipe.image'>
+          <p>Image</p>
+        </div>
       </div>
       <div class="medium-9 columns">
         <a ui-sref='layout.show({ recipe_id: val._id })'>

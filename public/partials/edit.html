@@ -241,8 +241,23 @@
                   <option value='Tested'>Tested</option>
                   <option value='Untested'>Untested</option>
                 </select>
+
+                <label for="image">
+                  <h4>Upload Image</h4>
+                </label>
+                <div ng-show='!edit.image'>
+                  <input type="file" id='image'>
+                </div>
               </div>
             </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="medium-12 columns">
+            <button type="submit">
+              <h4>Update Recipe</h4>
+            </button>
           </div>
         </div>
       </form>

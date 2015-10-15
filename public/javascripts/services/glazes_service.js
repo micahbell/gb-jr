@@ -22,11 +22,11 @@ app.factory('GlazesService', function ($http) {
         return response.data;
       })
     },
-    // updateRecipe: function(recipeId, userId) {
-    //   return $http.post('/glazes/' + userId + '/recipes/' + recipeId + '/update').then(function(response) {
-    //     return response;
-    //   })
-    // },
+    updateRecipe: function(recipeId, userId) {
+      return $http.post('/glazes/' + userId + '/recipes/' + recipeId + '/update').then(function(response) {
+        return response;
+      })
+    },
     // destroyRecipe: function(recipeId, userId) {
     //   return $http.post('/glazes/' + userId + '/recipes/' + recipeId + '/delete').then(function(response) {
     //     alert('Recipe destroyed');
