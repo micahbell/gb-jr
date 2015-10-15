@@ -14,7 +14,7 @@
         <a href="#"><img src="#" alt="" /></a>
       </div>
       <div class="medium-9 columns">
-        <a ng-click='showRecipe(val._id)'><h3>{{val.recipe.title}}</h3></a>
+        <a ui-sref='layout.show({ recipe_id: val._id })'><h3>{{val.recipe.title}}</h3></a>
         <p>{{val.date | amDateFormat: 'MMMM Do, YYYY'   }}&emsp; | &emsp;{{val.recipe.cone}}&emsp; | &emsp;{{val.recipe.surface}}</p>
       </div>
       <div class="medium-1 columns">

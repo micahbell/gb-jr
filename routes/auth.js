@@ -3,7 +3,7 @@ var router = express.Router();
 var db = require('monk')(process.env.LOCAL_DB);
 var users = db.get('users');
 var bcrypt = require('bcrypt');
-var userValidation = require('../lib/user-validation');
+var userValidation = require('../lib/user_validation');
 
 
 // USER SIGN UP //

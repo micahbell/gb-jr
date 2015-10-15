@@ -18,14 +18,13 @@ app.controller('AccountController', function($scope, $location, AccountsService)
 
   $scope.userLogin = function() {
     AccountsService.login($scope.login).then(function(response) {
+      console.log('User Login', response);
       if(response.data.loginError) {
         $scope.loginErrors = response.data.loginError;
       } else if(response.data.glazes === 0){
         $location.path('/' + response.data.id + '/new');
-        // $state.go('layout.new')
       } else {
         $location.path('/' + response.data.id + '/recipes');
-        // $state.go('layout.recipes')
       }
     })
   };

@@ -7,7 +7,6 @@ app.factory('AccountsService', function ($http) {
     },
     login: function(userLogin) {
       return $http.post('auth/login', userLogin).then(function(response) {
-        // console.log('accout service response', response);
         return response;
       })
     },

@@ -18,9 +18,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/recipes',
       templateUrl: '/partials/recipes.html'
     })
-    // .state('layout.show', {
-    //   url: '/:id',
-    //   templateUrl: '/partials/show.html'
-    // })
+    .state('layout.show', {
+      url: '/recipes/:recipe_id',
+      templateUrl: '/partials/show.html'
+    })
     // $locationProvider.html5Mode(true);
 })
