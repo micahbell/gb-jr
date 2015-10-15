@@ -1,7 +1,6 @@
 app.factory('GlazesService', function ($http) {
   return {
     create: function(recipe, userId) {
-      console.log('USER ID', userId);
       return $http.post('/glazes/' + userId + '/create', recipe).then(function(response) {
         console.log('Glaze Added');
         return response;
@@ -14,15 +13,15 @@ app.factory('GlazesService', function ($http) {
     },
     showRecipe: function(recipeId, userId) {
       return $http.get('/glazes/' + userId + '/recipes/' + recipeId).then(function(response) {
-        return response.data.recipe;
+        return response.data;
       })
     },
-    // editRecipe: function(recipeId, userId) {
-    //   return $http.get('/glazes/' + userId + '/recipes/' + recipeId + '/edit').then(function(response) {
-    //     console.log('FOUND EDIT RECIPE', response);
-    //     return response;
-    //   })
-    // },
+    editRecipe: function(recipeId, userId) {
+      return $http.get('/glazes/' + userId + '/recipes/' + recipeId + '/edit').then(function(response) {
+        console.log('FOUND EDIT RECIPE', response.data);
+        return response.data;
+      })
+    },
     // updateRecipe: function(recipeId, userId) {
     //   return $http.post('/glazes/' + userId + '/recipes/' + recipeId + '/update').then(function(response) {
     //     return response;

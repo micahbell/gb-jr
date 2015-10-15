@@ -10,7 +10,7 @@
         <div class="row">
           <div class="medium-10 columns">
             <label for="title"><h2>Title</h2></label>
-            <input type="text" id='title' autocomplete="off" ng-model='recipe.title' required>
+            <input type="text" id='title' autocomplete="off" required='required' ng-model='recipe.title'>
           </div>
           <div class="medium-2 columns">
             <label for="favorite"><h2>Fav</h2></label>
@@ -21,7 +21,7 @@
         </div>
 
         <div class="row">
-          <div class="medium-12 columns">
+          <div class="medium-12 columns"><!--Don't Delete-->
             <div class="medium-6 columns">
               <div class="row">
                 <div class="medium-12 columns">
@@ -153,10 +153,14 @@
           <div class="medium-8 columns">
             <div class="row">
               <div class="medium-9 columns">
-                <label for="ingredients"><h3>Base Ingredients</h3></label>
+                <label for="ingredients">
+                  <h3>Base Ingredients</h3>
+                </label>
               </div>
               <div class="medium-3 columns">
-                <label for="amount"><h3>Amount</h3></label>
+                <label for="amount">
+                  <h3>Amount</h3>
+                </label>
               </div>
             </div>
             <div class="row">
@@ -169,74 +173,74 @@
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients'ng-model='recipe.ingredient_2')>
+                <input type='text' id='ingredients'ng-model='recipe.ingredients.in2.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_2')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in2.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_3')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in3.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_3')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in3.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_4')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in4.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_4')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in4.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_5')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in5.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_5')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in5.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_6')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in6.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_6')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in6.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_7')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in7.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_7')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in7.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_8')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in8.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_8')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in8.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_9')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in9.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_9')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in9.amount')>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='ingredients' ng-model='recipe.ingredient_10')>
+                <input type='text' id='ingredients' ng-model='recipe.ingredients.in10.name')>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='amount' ng-model='recipe.amount_10')>
+                <input type='text' id='amount' ng-model='recipe.ingredients.in10.amount')>
               </div>
             </div>
           </div>
@@ -258,53 +262,52 @@
                 <label for="add-amounts"><h3>Amount</h3></label>
               </div>
             </div>
-
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_1'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in1.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_1'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in1.amount'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_2'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in2.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_2'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in2.amount'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_3'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in3.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_3'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in3.amount'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_4'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in4.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_4'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in4.amount'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_5'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in5.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_5'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in5.amount'>
               </div>
             </div>
             <div class="row">
               <div class="medium-9 columns">
-                <input type='text' id='add-ingredients' ng-model='recipe.add_in_6'>
+                <input type='text' id='add-ingredients' ng-model='recipe.addIngredients.in6.name'>
               </div>
               <div class="medium-3 columns">
-                <input type='text' id='add-amounts' ng-model='recipe.add_amount_6'>
+                <input type='text' id='add-amounts' ng-model='recipe.addIngredients.in6.amount'>
               </div>
             </div>
           </div>

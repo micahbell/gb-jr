@@ -22,5 +22,24 @@ app.config(function($stateProvider, $urlRouterProvider) {
       url: '/recipes/:recipe_id',
       templateUrl: '/partials/show.html'
     })
+    .state('layout.edit', {
+      url: '/recipes/:recipe_id/edit',
+      templateUrl: '/partials/edit.html'
+    })
+    .state('layout.destroy', {
+      url: '/recipes/:recipe_id/delete',
+      templateUrl: '/partials/recipes.html'
+    })
     // $locationProvider.html5Mode(true);
 })
+
+
+
+
+
+
+
+
+
+
+//

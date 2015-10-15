@@ -1,21 +1,255 @@
 <div class="container" ng-controller='GlazeController'>
   <div class="row">
     <div class="medium-12 columns">
-      <h1>Edit</h1>
+      <h1>Edit {{edit.title}}</h1>
     </div>
 
     <div class="medium-12 columns">
       <form ng-submit='updateRecipe()'>
-        <div class="medium-10 columns">
-          <label for="title">
-            <h2>Title</h2>
-          </label>
-          <input type="text" id='title' value="editRecipe.title" required="required">
+        <div class="row">
+          <div class="medium-10 columns">
+            <label for="title">
+              <h2>{{edit.title}}</h2>
+            </label>
+            <input type="text" id='title' required="required" autocomplete="off" ng-model='edit.title'>
+          </div>
+          <div class="medium-2 columns">
+            <label for="favorite">
+              <h2>Fav</h2>
+              <div ng-show='edit.favorite'>
+                <input type="checkbox" id='favorite' checked>
+                <i class='fa fa-heart'></i>
+              </div>
+              <div ng-show='!edit.favorite'>
+                <input type="checkbox" id='favorite'>
+                <i class='fa fa-heart-o'></i>
+              </div>
+            </label>
+          </div>
         </div>
-        <div class="medium-2 columns">
 
+        <div class="row">
+          <div class="medium-12 columns"> <!--Don't Delete This-->
+            <div class="medium-6 columns">
+              <div class="row">
+                <div class="medium-12 columns">
+                  <h3>Firing</h3>
+                </div>
+                <i class='fa fa-angle-down'></i>
+                <i class='fa fa-angle-down'></i>
+                <i class='fa fa-angle-down'></i>
+                <div class="medium-12 columns">
+                  <select id="temp-range" required="required" ng-model="edit.tempRange">
+                    <option value='' disabled>Temperature Range</option>
+                    <option value='Low Fire'>Low Fire</option>
+                    <option value='Mid Range'>Mid Range</option>
+                    <option value='High Fire'>High Fire</option>
+                  </select>
+                </div>
+
+                <div class="medium-12 columns">
+                  <select id="cone" required="required" ng-model="edit.cone">
+                    <option value=''>Cone</option>
+                    <option value='∆ 022'>∆ 022</option>
+                    <option value='∆ 021'>∆ 021</option>
+                    <option value='∆ 020'>∆ 020</option>
+                    <option value='∆ 019'>∆ 019</option>
+                    <option value='∆ 018'>∆ 018</option>
+                    <option value='∆ 017'>∆ 017</option>
+                    <option value='∆ 016'>∆ 016</option>
+                    <option value='∆ 015'>∆ 015</option>
+                    <option value='∆ 014'>∆ 014</option>
+                    <option value='∆ 013'>∆ 013</option>
+                    <option value='∆ 012'>∆ 012</option>
+                    <option value='∆ 011'>∆ 011</option>
+                    <option value='∆ 010'>∆ 010</option>
+                    <option value='∆ 09'>∆ 09</option>
+                    <option value='∆ 08'>∆ 08</option>
+                    <option value='∆ 07'>∆ 07</option>
+                    <option value='∆ 06'>∆ 06</option>
+                    <option value='∆ 05'>∆ 05</option>
+                    <option value='∆ 04'>∆ 04</option>
+                    <option value='∆ 03'>∆ 03</option>
+                    <option value='∆ 02'>∆ 02</option>
+                    <option value='∆ 01'>∆ 01</option>
+                    <option value='∆ 1'>∆ 1</option>
+                    <option value='∆ 2'>∆ 2</option>
+                    <option value='∆ 3'>∆ 3</option>
+                    <option value='∆ 4'>∆ 4</option>
+                    <option value='∆ 5'>∆ 5</option>
+                    <option value='∆ 6'>∆ 6</option>
+                    <option value='∆ 7'>∆ 7</option>
+                    <option value='∆ 8'>∆ 8</option>
+                    <option value='∆ 9'>∆ 9</option>
+                    <option value='∆ 10'>∆ 10</option>
+                    <option value='∆ 11'>∆ 11</option>
+                    <option value='∆ 12'>∆ 12</option>
+                    <option value='∆ 13'>∆ 13</option>
+                    <option value='∆ 14'>∆ 14</option>
+                    <option value='∆ 15'>∆ 15</option>
+                  </select>
+                </div>
+
+                <div class="medium-12 columns">
+                  <select id="firing-type" required="required" ng-model="edit.firingType">
+                    <option value='' disabled>Type of Firing</option>
+                    <option value='Oxidation'>Oxidation</option>
+                    <option value='Reduction'>Reduction</option>
+                    <option value='Raku'>Raku</option>
+                    <option value='Salt or Soda'>Salt or Soda</option>
+                    <option value='Wood'>Wood</option>
+                    <option value='Lustre'>Lustre</option>
+                    <option value='Saggar'>Saggar</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="medium-6 columns">
+              <div class="row">
+                <div class="medium-12 columns">
+                  <h3>Appearance</h3>
+                </div>
+                <i class='fa fa-angle-down'></i>
+                <i class='fa fa-angle-down'></i>
+                <i class='fa fa-angle-down'></i>
+
+                <div class="medium-12 columns">
+                  <select id="surface" required="required" ng-model="edit.surface">
+                    <option value='' disabled>Surface</option>
+                    <option value='Shiny or Glossy'>Shiny or Glossy</option>
+                    <option value='Semi-Gloss'>Semi-Gloss</option>
+                    <option value='Semi-Matte or Satin'>Semi-Matte or Satin</option>
+                    <option value='Matte'>Matte</option>
+                    <option value='Dry Matte'>Dry Matte</option>
+                  </select>
+                </div>
+
+                <div class="medium-12 columns">
+                  <select id="opacity" required="required" ng-model="edit.opacity">
+                    <option value='' disabled>Opacity</option>
+                    <option value='Transparent'>Transparent</option>
+                    <option value='Translucent'>Translucent</option>
+                    <option value='Opaque'>Opaque</option>
+                  </select>
+                </div>
+
+                <div class="medium-12 columns">
+                  <select id="color" required="required" ng-model="edit.color">
+                    <option value='' disabled>Color</option>
+                    <option value='No Color'>No Color</option>
+                    <option value='White'>White</option>
+                    <option value='Gray'>Gray</option>
+                    <option value='Black'>Black</option>
+                    <option value='Brown'>Brown</option>
+                    <option value='Red'>Red</option>
+                    <option value='Orange'>Orange</option>
+                    <option value='Yellow'>Yellow</option>
+                    <option value='Green'>Green</option>
+                    <option value='Blue-Green'>Blue-Green</option>
+                    <option value='Blue'>Blue</option>
+                    <option value='Purple'>Purple</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="medium-8 columns">
+            <div class="row">
+              <div class="medium-9 columns">
+                <label for="ingredients">
+                  <h3>Base Ingredients</h3>
+                </label>
+              </div>
+              <div class="medium-3 columns">
+                <label for="amount">
+                  <h3>Amount</h3>
+                </label>
+              </div>
+            </div>
+            <div ng-repeat='(inNumber, inObject) in edit.ingredients'>
+              <div class="row">
+                <div class="medium-9 columns">
+                  <input type='text' id='ingredients' ng-model='inObject.name')>
+                </div>
+                <div class="medium-3 columns">
+                  <input type='text' id='amount' ng-model='inObject.amount')>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="medium-4 columns">
+            <label for="notes">
+              <h3>Notes</h3>
+            </label>
+            <textarea id='notes' ng-model='edit.notes'>{{edit.notes}}</textarea>
+          </div>
+
+        <div class='row'>
+          <div class="medium-8 columns">
+            <div class="row">
+              <div class="medium-9 columns">
+                <label for="add-ingredients">
+                  <h3>Additional Ingredients</h3>
+                </label>
+              </div>
+              <div class="medium-3 columns">
+                <label for="add-amounts">
+                  <h3>Amount</h3>
+                </label>
+              </div>
+            </div>
+            <div ng-repeat='(addInNumber, addInObject) in edit.addIngredients'>
+              <div class="row">
+                <div class="medium-9 columns">
+                  <input type='text' id='ingredients' ng-model='addInObject.name')>
+                </div>
+                <div class="medium-3 columns">
+                  <input type='text' id='amount' ng-model='addInObject.amount')>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="medium-4 columns">
+            <h4>Additional Information</h4>
+            <i class='fa fa-angle-drop'></i>
+            <i class='fa fa-angle-drop'></i>
+            <div class="row">
+              <div class="medium-12 columns">
+                <select name="specialty" id="specialty" ng-model="edit.specialty">
+                  <option value='' disabled>Specialty Glaze</option>
+                  <option value='Crystalline'>Crystalline</option>
+                  <option value='Metallic'>Metallic</option>
+                  <option value='Luster'>Luster</option>
+                  <option value='Texture'>Texture</option>
+                  <option value='Rivulet'>Rivulet</option>
+                  <option value='Slip'>Slip</option>
+                  <option value='Stain'>Stain</option>
+                  <option value='Engobe'>Engobe</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="medium-12 columns">
+                <select name="test_status" id="test-status" ng-model="edit.testStatus">
+                  <option value='' disabled>Test Status</option>
+                  <option value='Tested'>Tested</option>
+                  <option value='Untested'>Untested</option>
+                </select>
+              </div>
+            </div>
+          </div>
         </div>
       </form>
     </div>
   </div>
 </div>
+
+
+
+<!---->

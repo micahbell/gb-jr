@@ -3,24 +3,32 @@
     <div class="medium-9 columns">
       <div class="row">
 
-        <div class="medium-1 columns" ng-show=''>
-          <i class='fa fa-heart'></i>
-        </div>
-        <div class="medium-11 columns">
-          <h1>Title</h1>
-          <p>{{recipe.title}}</p>
+        <div ng-show='show.recipe.favorite'>
+          <div class="medium-1 columns">
+            <i class='fa fa-heart'></i>
+          </div>
+          <div class="medium-11 columns">
+            <h1>{{show.recipe.title}}</h1>
+          </div>
         </div>
 
+        <div ng-show='!show.recipe.favorite'>
+          <div class="medium-12 columns">
+            <h1>{{show.recipe.title}}</h1>
+          </div>
+        </div>
       </div>
     </div>
     <div class="medium-3 columns">
       <div class="medium-6 columns">
-        <button ng-click='editRecipe()'>
-          <i class='fa fa-pencil-square-o'></i>
-        </button>
+        <a ui-sref='layout.edit({ recipe_id: recipe._id })'>
+          <button>
+            <i class='fa fa-pencil-square-o'></i>
+          </button>
+        </a>
       </div>
       <div class="medium-6 columns">
-        <button ng-click='destroyRecipe()'>
+        <button ng-click='destroyRecipe({ recipe_id: recipe._id })'>
           <i class='fa fa-trash-o'></i>
         </button>
       </div>
@@ -28,21 +36,25 @@
   </div>
 
   <hr>
+
   <div class="row">
     <div class="medium-7 columns">
       <div class="row">
         <div class="medium-12 columns">
           <h3>Base Ingredients</h3>
           <div class="row">
-            <div class="medium-8 columns">
-              <input type="checkbox" id='val'>
-              <label for="val">VAL</label>
-              <hr>
-            </div>
-            <div class="medium-4 columns">
-              <input type="checkbox" class='hidden' id='val'>
-              <label for="val">VAL</label>
-              <hr>
+            <div ng-repeat='(inNumber, inObject) in show.recipe.ingredients'>
+              <div class="medium-8 columns">
+                <input type="checkbox" id='val'>
+                <label for="val">{{inObject.name}}</label>
+                <hr>
+              </div>
+
+              <div class="medium-4 columns">
+                <input type="checkbox" class='hidden' id='val'>
+                <label for="val">{{inObject.amount}}</label>
+                <hr>
+              </div>
             </div>
           </div>
         </div>
@@ -53,15 +65,18 @@
         <div class="medium-12 columns">
           <h3>Additional Ingredients</h3>
           <div class="row">
-            <div class="medium-8 columns">
-              <input type="checkbox" id='val'>
-              <label for="val">VAL</label>
-              <hr>
-            </div>
-            <div class="medium-4 columns">
-              <input type="checkbox" class='hidden' id='val'>
-              <label for="val">VAL</label>
-              <hr>
+            <div ng-repeat='(inNumber, inObject) in show.recipe.addIngredients'>
+              <div class="medium-8 columns">
+                <input type="checkbox" id='val'>
+                <label for="val">{{inObject.name}}</label>
+                <hr>
+              </div>
+
+              <div class="medium-4 columns">
+                <input type="checkbox" class='hidden' id='val'>
+                <label for="val">{{inObject.amount}}</label>
+                <hr>
+              </div>
             </div>
           </div>
         </div>
@@ -69,21 +84,39 @@
     </div>
 
     <div class="medium-5 columns">
-      <h4>Firing Temperature</h4>
-      <h4>Cone</h4>
-      <h4>Type of Firing</h4>
-      <h4>Surface</h4>
-      <h4>Opacity</h4>
-      <h4>Color</h4>
-      <h4>Specialty Glaze</h4>
-      <h4>Test Status</h4>
+      <div class="attributes">
+        <h4>Temperature</h4>
+        <span>&emsp; | &emsp;{{show.recipe.tempRange}}</span>
+        <br>
+        <h4>Cone</h4>
+        <span>&emsp; | &emsp;{{show.recipe.cone}}</span>
+        <br>
+        <h4>Firing Type</h4>
+        <span>&emsp; | &emsp;{{show.recipe.firingType}}</span>
+        <br>
+        <h4>Surface</h4>
+        <span>&emsp; | &emsp;{{show.recipe.surface}}</span>
+        <br>
+        <h4>Opacity</h4>
+        <span>&emsp; | &emsp;{{show.recipe.opacity}}</span>
+        <br>
+        <h4>Color</h4>
+        <span>&emsp; | &emsp;{{show.recipe.color}}</span>
+        <br>
+        <h4>Specialty</h4>
+        <span>&emsp; | &emsp;{{show.recipe.specialty}}</span>
+        <br>
+        <h4>Test Status</h4>
+        <span>&emsp; | &emsp;{{show.recipe.testStatus}}</span>
+
+      </div>
     </div>
   </div>
 
   <div class="row">
     <div class="medium-7 columns">
       <h3>Notes</h3>
-      <p>Recipe Notes</p>
+      <p>{{show.recipe.notes}}</p>
     </div>
     <div class="medium-5 columns">
       <h3>Image</h3>

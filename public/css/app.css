@@ -2432,4 +2432,8 @@ footer {
   .content h1 {
     margin-top: 0.875em; }
 
+.attributes h4 {
+  width: 80px;
+  display: inline-block; }
+
 /*# sourceMappingURL=app.css.map */
